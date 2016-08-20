@@ -4,9 +4,9 @@
   <subtitle>默默的提升iOS开发水平</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://jasoniosdev.github.io/"/>
   <updated>2016-08-19T16:23:31.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://jasoniosdev.github.io/</id>
   
   <author>
     <name>Jason</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>网易面试体会</title>
-    <link href="http://yoursite.com/year/08/19/%E7%BD%91%E6%98%93%E9%9D%A2%E8%AF%95%E4%BD%93%E4%BC%9A/"/>
-    <id>http://yoursite.com/year/08/19/网易面试体会/</id>
+    <link href="https://jasoniosdev.github.io/year/08/19/%E7%BD%91%E6%98%93%E9%9D%A2%E8%AF%95%E4%BD%93%E4%BC%9A/"/>
+    <id>https://jasoniosdev.github.io/year/08/19/网易面试体会/</id>
     <published>2016-08-19T15:44:00.000Z</published>
     <updated>2016-08-19T16:23:31.000Z</updated>
     
@@ -32,12 +32,12 @@
     
     </summary>
     
-      <category term="生活小记" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/"/>
+      <category term="生活小记" scheme="https://jasoniosdev.github.io/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/"/>
     
     
-      <category term="大三" scheme="http://yoursite.com/tags/%E5%A4%A7%E4%B8%89/"/>
+      <category term="大三" scheme="https://jasoniosdev.github.io/tags/%E5%A4%A7%E4%B8%89/"/>
     
-      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="面试" scheme="https://jasoniosdev.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
