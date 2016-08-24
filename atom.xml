@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jasoniosdev.github.io/"/>
-  <updated>2016-08-24T10:17:33.000Z</updated>
+  <updated>2016-08-24T10:25:26.000Z</updated>
   <id>https://jasoniosdev.github.io/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>SDWebImage浅读(一)</title>
-    <link href="https://jasoniosdev.github.io/year/08/22/SDWebImage%E6%B5%85%E8%AF%BB%5B1%5D/"/>
-    <id>https://jasoniosdev.github.io/year/08/22/SDWebImage浅读[1]/</id>
+    <link href="https://jasoniosdev.github.io/SDWebImageReadOne/"/>
+    <id>https://jasoniosdev.github.io/SDWebImageReadOne/</id>
     <published>2016-08-22T09:01:13.000Z</published>
-    <updated>2016-08-24T10:17:33.000Z</updated>
+    <updated>2016-08-24T10:25:26.000Z</updated>
     
     <content type="html"><![CDATA[<h4 id="SDWebImage"><a href="#SDWebImage" class="headerlink" title="SDWebImage"></a>SDWebImage</h4><p>　　之前一直在打算看SDWebImage的源码，一方面是因为面试常问，一方面是这个库确实写的非常精妙。这次看稍微读了一下，由于可能自身水平比较有限，感觉这次只懂了20%，就大概懂用了哪些东西，顺序如何，其他的估计等自己水平上升了或者是开发中接触到了，再来挖掘吧。而且由于本人缺乏对应项目结构的经验，可能在措辞和总结上不是很规范，希望懂得同学能够指出我的错误，不吝赐教，谢谢。</p>
 <h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>　 SDWebImage类上主要包含<br>　　<code>SDWebImageManager</code>：以单例的形式负责整个类使用的调度，职责如同Manager这个单词一样。类里面有两个属性<code>SDImageCache</code>和<code>SDImageDownloader</code>，还有一个<code>SDWebImageCacheKeyFilterBlock</code>类型的cacheKeyFilter闭包，不过貌似这个闭包是可以根据用户的规则去生成，在库内并没有实现。<br>　　<code>SDImageCache</code>：负责图片的缓存操作，可以缓存在内存或者磁盘当中，可以强制选择不缓存在磁盘当中。利用对<code>NSCache</code>的简单封装,以此来管理图片的缓存。<br>　　<code>SDWebImageDownloader</code>：负责图片的下载服务，通过一个OperationQueue来管理DownloaderOperation，拥有实际的<code>NSURLSession</code>的一个对象。<br>　　<code>SDWebImageDownloaderOperation</code>：实际进行图片下载的服务，通过<code>NSURLSession</code>进行下载，<code>NSURLSession</code>的回调是来自<code>SDWebImageDownloader</code>。<br>　　<code>SDWebImageDecoder</code>：负责图片的解码，由于不是很懂图像处理，日后等了解了再来学习。<br>　　然后通过Category的形式来给每个类拓展功能。<br>　　其他的类还没怎么学习。</p>
@@ -49,10 +49,10 @@
   
   <entry>
     <title>网易面试体会</title>
-    <link href="https://jasoniosdev.github.io/year/08/19/%E7%BD%91%E6%98%93%E9%9D%A2%E8%AF%95%E4%BD%93%E4%BC%9A/"/>
-    <id>https://jasoniosdev.github.io/year/08/19/网易面试体会/</id>
+    <link href="https://jasoniosdev.github.io/NetEaseOfferTry/"/>
+    <id>https://jasoniosdev.github.io/NetEaseOfferTry/</id>
     <published>2016-08-19T15:44:00.000Z</published>
-    <updated>2016-08-23T11:47:50.000Z</updated>
+    <updated>2016-08-24T10:28:57.000Z</updated>
     
     <content type="html"><![CDATA[<p>　　总的一个体会来讲，应该是感谢，感谢网易能够给予自己面试的机会。<br>　　虽然没能够拿到Offer，但自己也是当做一次学习吧，认识自己的一次经历。<br><a id="more"></a><br>　　说到面试，也可以说是自己大三所做的一个比较不足，略有遗憾的事情，因为自身的无知，以及身边资源相对的欠缺，所以导致在春招进行的热闹非凡的情况下，自己却全然无动于衷，只把心思放在秋招上，这也是自己一直以来做事的一个缺点，总是喜欢被动的去了解一些事物，除非是最后时刻。所以自己因此也错过了春招这一次十分好的锻炼自己的机会。<br>　　回到秋招，原本之前我是打算继续读研究生的，虽然自己对于研究生这东西没什么兴趣，因为自己对于开发实在是太过热爱，所以在一开始的时候是抱着工作一半，研究生一半的心思得过且过。寻思着到时候能够保研，毕竟那时候还天真的认为自己是多么的优秀，能够拿到学校的保研名额，能够成功的被高校所吸收，在后来的时候受挫了，看着自己差劲的成绩，只有勉强一点竞赛成绩还看着过去。不过并没什么卵用。<br>　　对于面试，网易其实是我参加面试的第二个公司，第一个参与面试的公司是阿里，那时候在网上得到内推资格后，在第二周就收到了阿里一面的电话，那时候心情十分的激动，以至于说话十分的跳，不过由于来的实在太早，加上自己并没有什么经验，对于所问的东西心里都没底，所以就那样没有了然后。<br>　　网易今年是放宽了要求，只需要内推，就都有机会参与笔试，成功通过就可以进入面试环节，还给报销来回车费，简直良心。<br>　　在面试当天发生了一件有趣的事情，我出门的时候居然忘记吃饭了（看来是太紧张了）。到了网易，坐下之后，听到工作人员在问早上面试的同学要不要吃饭的时候，自己才发觉，原来自己还没有吃饭。但自己又怕跟着去，会被认出来。来回转了几圈，最终还是跟去吃饭了。网易餐厅吃饭果然是免费的，而且伙食条件上层，吃饭的时候就在想，要是自己未来能够在那环境下工作，该有多好。<br>　　下午面试开始了，我是13点面试，不过由于早上面试的延迟，到了13点40分左右，才叫到我去面试。一面的面试官是一个年轻的小伙子，十分的nice，他问了我几个iOS的问题，还有算法，还有关于项目上的问题。除了两个问题不会之外，都答出来了。什么时候需要手动加自动释放池以及沙盒机制。这两个问题没能够答上来。在后面面试官也问了一个我十分喜欢的问题，就是我做算法而选择开发。我也向面试官表达了我喜欢做产品的想法，最后他也表示认同的说：我也看出来你喜欢做产品了。<br>　　过了十几分钟，上了个厕所回来，就轮到我二面了，面试官没有问项目上的问题，而是直接问关于RunLoop，还好自己RunLoop前后看了好几遍，虽然还有一些小问题还不清楚，但答的还可以。后来面试官又问了我如何实现自定义动画以及模态如何实现像导航栏返回的手势，幸好自己在之前做的《田园智慧管家》有尝试封装过自定义转场，所以也是答上来了，然后还问了关于第三方库源码，以及SDWebImage网络请求是用哪个库实现的，自己在之前也是专门看了SDWebImage的源码，虽然还没看完，打算继续研究，所以也是记得。<br>　　总的来说，两轮技术面还挺顺利，都问到了自己所准备的问题。在后来去问的时候，得知说还要进行总监面，那时候不知道总监面是什么东西，有点疑惑，不过在叫到我的时候，直接就是HR面了。在回去的时候才知道原来能够总监面的人都是表现比较好的，自己的没能总监面，应该是不够优秀吧。<br>　　总的面试下来，主要是HR那块表现的不是很好，自己在心情的把握上比较不好，跟HR虽然聊了很久，但最后HR也是突然结束。所以应该是没什么希望了。<br>　　不过这次面试想下来，自己还做的不够的地方应该是自己会答，但答的不够好，答得不够全。所以在之后假如还有机会面试的话，自己需要慢一点，将问题答得更为令人满意，不过这还需要过硬的心里素质。<br>　　在之后自己也希望能够开始自己的iOS博客，将技术和生活小记下来。此篇做为第一篇。END！<br>　　<br>　　今天才发现，为什么自己当初被取消了总监面的机会，说起来也可笑。原来在一面的时候，面试官问了我一个关于迪杰斯特拉算法的问题，我回答的很好，然后我自己多答了prim算法，然后把迪杰斯特拉算法当成了克鲁斯卡尔算法，进行了两者的比较，没错，就是问最小路径算法，最后自己补了个最小生成树算法，并且把原来的混为一谈了。想必是后来面试官把我的评分从A改为了C吧，所以所谓的总监面也就没了，太可惜了。</p>
 ]]></content>
