@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jasoniosdev.github.io/"/>
-  <updated>2016-08-24T10:13:37.000Z</updated>
+  <updated>2016-08-24T10:14:20.000Z</updated>
   <id>https://jasoniosdev.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://jasoniosdev.github.io/year/08/22/SDWebImage%E6%B5%85%E8%AF%BB(%E4%B8%80)/"/>
     <id>https://jasoniosdev.github.io/year/08/22/SDWebImage浅读(一)/</id>
     <published>2016-08-22T09:01:13.000Z</published>
-    <updated>2016-08-24T10:13:37.000Z</updated>
+    <updated>2016-08-24T10:14:20.000Z</updated>
     
     <content type="html"><![CDATA[<h4 id="SDWebImage源码浅读（一）"><a href="#SDWebImage源码浅读（一）" class="headerlink" title="SDWebImage源码浅读（一）"></a>SDWebImage源码浅读（一）</h4><p>　　之前一直在打算看SDWebImage的源码，一方面是因为面试常问，一方面是这个库确实写的非常精妙。这次看稍微读了一下，由于可能自身水平比较有限，感觉这次只懂了20%，就大概懂用了哪些东西，顺序如何，其他的估计等自己水平上升了或者是开发中接触到了，再来挖掘吧。而且由于本人缺乏对应项目结构的经验，可能在措辞和总结上不是很规范，希望懂得同学能够指出我的错误，不吝赐教，谢谢。</p>
 <h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>　 SDWebImage类上主要包含<br>　　<code>SDWebImageManager</code>：以单例的形式负责整个类使用的调度，职责如同Manager这个单词一样。类里面有两个属性<code>SDImageCache</code>和<code>SDImageDownloader</code>，还有一个<code>SDWebImageCacheKeyFilterBlock</code>类型的cacheKeyFilter闭包，不过貌似这个闭包是可以根据用户的规则去生成，在库内并没有实现。<br>　　<code>SDImageCache</code>：负责图片的缓存操作，可以缓存在内存或者磁盘当中，可以强制选择不缓存在磁盘当中。利用对<code>NSCache</code>的简单封装,以此来管理图片的缓存。<br>　　<code>SDWebImageDownloader</code>：负责图片的下载服务，通过一个OperationQueue来管理DownloaderOperation，拥有实际的<code>NSURLSession</code>的一个对象。<br>　　<code>SDWebImageDownloaderOperation</code>：实际进行图片下载的服务，通过<code>NSURLSession</code>进行下载，<code>NSURLSession</code>的回调是来自<code>SDWebImageDownloader</code>。<br>　　<code>SDWebImageDecoder</code>：负责图片的解码，由于不是很懂图像处理，日后等了解了再来学习。<br>　　然后通过Category的形式来给每个类拓展功能。<br>　　其他的类还没怎么学习。</p>
